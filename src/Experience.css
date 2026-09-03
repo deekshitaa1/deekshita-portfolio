@@ -1,0 +1,189 @@
+.experience-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 14vh 6vw 16vh;
+    background: #8f0f0f;
+    color: #f4ead8;
+    overflow: hidden;
+}
+
+/* subtle editorial texture */
+.experience-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(255, 180, 120, 0.5),
+            transparent 28%),
+        radial-gradient(circle at 85% 70%,
+            rgba(0, 0, 0, 0.45),
+            transparent 35%);
+}
+
+.experience-top {
+    position: relative;
+    z-index: 1;
+    margin-bottom: clamp(70px, 11vh, 150px);
+}
+
+.experience-kicker {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.72;
+}
+
+.experience-heading {
+    margin: 0;
+    font-size: clamp(80px, 17vw, 220px);
+    line-height: 0.78;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* EXPERIENCE LIST */
+
+.experience-list {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(244, 234, 216, 0.55);
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr) 60px;
+    gap: 30px;
+
+    padding: 42px 0;
+
+    border-bottom: 1px solid rgba(244, 234, 216, 0.35);
+
+    transition:
+        padding 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        background 0.4s ease;
+}
+
+.experience-item:hover {
+    padding-left: 18px;
+    padding-right: 18px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.experience-number {
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    opacity: 0.65;
+}
+
+.experience-main {
+    max-width: 950px;
+}
+
+.experience-meta {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    opacity: 0.65;
+}
+
+.experience-main h3 {
+    margin: 0;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: clamp(28px, 4vw, 62px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.experience-company {
+    margin-top: 13px;
+
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(22px, 2.3vw, 36px);
+    font-style: italic;
+}
+
+.experience-main p {
+    max-width: 65ch;
+    margin: 28px 0 0;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+
+    opacity: 0.82;
+}
+
+.experience-skills {
+    margin-top: 24px;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+
+    opacity: 0.6;
+}
+
+.experience-arrow {
+    align-self: center;
+    justify-self: end;
+
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 42px;
+    font-style: italic;
+
+    transition:
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-item:hover .experience-arrow {
+    transform: translate(6px, -6px);
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+    .experience-section {
+        padding: 12vh 6vw 12vh;
+    }
+
+    .experience-heading {
+        font-size: clamp(70px, 22vw, 130px);
+    }
+
+    .experience-item {
+        grid-template-columns: 35px 1fr;
+        gap: 15px;
+    }
+
+    .experience-arrow {
+        display: none;
+    }
+
+    .experience-meta {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .experience-main h3 {
+        font-size: clamp(27px, 9vw, 48px);
+    }
+}

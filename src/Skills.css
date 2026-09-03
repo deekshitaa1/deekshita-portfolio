@@ -1,0 +1,117 @@
+.skills-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 14vh 6vw 16vh;
+
+    background: #100909;
+    color: #f4ead8;
+
+    overflow: hidden;
+}
+
+.skills-header {
+    margin-bottom: clamp(70px, 10vh, 130px);
+}
+
+.skills-kicker {
+    display: block;
+    margin-bottom: 20px;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+.skills-heading {
+    margin: 0;
+
+    font-size: clamp(90px, 18vw, 240px);
+    line-height: 0.78;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid rgba(244, 234, 216, 0.35);
+    border-left: 1px solid rgba(244, 234, 216, 0.18);
+}
+
+.skill-card {
+    position: relative;
+
+    min-height: 300px;
+    padding: 34px;
+
+    border-right: 1px solid rgba(244, 234, 216, 0.25);
+    border-bottom: 1px solid rgba(244, 234, 216, 0.25);
+
+    transition:
+        background 0.4s ease,
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skill-card:hover {
+    background: #8f0f0f;
+    transform: translateY(-4px);
+}
+
+.skill-number {
+    display: block;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+
+    opacity: 0.5;
+}
+
+.skill-card h3 {
+    margin: 75px 0 25px;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: clamp(24px, 3vw, 46px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+}
+
+.skill-card p {
+    max-width: 52ch;
+    margin: 0;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+
+    opacity: 0.65;
+}
+
+@media (max-width: 720px) {
+    .skills-section {
+        padding: 12vh 6vw;
+    }
+
+    .skills-heading {
+        font-size: clamp(80px, 23vw, 140px);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        min-height: 250px;
+        padding: 25px;
+    }
+
+    .skill-card h3 {
+        margin-top: 55px;
+    }
+}

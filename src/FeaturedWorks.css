@@ -1,0 +1,1016 @@
+/* =========================================================
+   FEATURED WORKS
+   Dossier-inspired editorial project presentation
+   ========================================================= */
+
+.fw-section {
+    min-height: 100vh;
+    padding: 18vh 6vw 16vh;
+    position: relative;
+    overflow: clip;
+    color: #efe9d8;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.fw-heading {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: clamp(56px, 13vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    font-weight: 500;
+
+    cursor: default;
+}
+
+
+/* =========================================================
+   PROJECT STACK
+   ========================================================= */
+
+.fw-projects {
+    display: flex;
+    flex-direction: column;
+
+    gap: clamp(28px, 5vw, 72px);
+
+    margin-top: clamp(56px, 10vh, 130px);
+}
+
+
+/* =========================================================
+   TWO-COLUMN ROW
+   ========================================================= */
+
+.proj-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: clamp(18px, 2.5vw, 38px);
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   PROJECT SLIDE
+   ========================================================= */
+
+.proj-slide {
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    border-radius: 0;
+
+    background: #111;
+
+    text-decoration: none;
+    color: inherit;
+
+    opacity: 0;
+
+    transform: translateX(0);
+
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+
+    will-change: opacity, transform;
+}
+
+
+/* Entrance direction */
+
+.proj-slide--from-left {
+    transform: translateX(-10vw);
+}
+
+.proj-slide--from-right {
+    transform: translateX(10vw);
+}
+
+.proj-slide.is-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Second card enters slightly later */
+
+.proj-row .proj-slide:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+
+/* =========================================================
+   PROJECT HEIGHTS
+   ========================================================= */
+
+.proj-slide--big {
+    height: clamp(420px, 70vh, 820px);
+}
+
+.proj-slide--half {
+    height: clamp(340px, 58vh, 680px);
+}
+
+
+/* =========================================================
+   MEDIA CONTAINER
+   ========================================================= */
+
+.proj-media {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 50%,
+            rgba(255, 255, 255, 0.06),
+            transparent 60%);
+
+    transition:
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+   ========================================================= */
+
+.proj-slide img,
+.proj-slide video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.7s ease;
+}
+
+.proj-slide:hover img,
+.proj-slide:hover video {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   PROJECT VISUAL
+   ========================================================= */
+
+.proj-visual {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background: #0b0b0b;
+
+    isolation: isolate;
+}
+
+
+/* Fine editorial grid */
+
+.proj-visual-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.055) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.055) 1px,
+            transparent 1px);
+
+    background-size: 70px 70px;
+
+    opacity: 0.5;
+
+    transform: perspective(700px) rotateX(55deg) scale(1.8);
+
+    transform-origin: center bottom;
+
+    animation: projectGridMove 14s linear infinite;
+
+    z-index: -1;
+}
+
+@keyframes projectGridMove {
+    from {
+        transform:
+            perspective(700px) rotateX(55deg) scale(1.8) translateY(0);
+    }
+
+    to {
+        transform:
+            perspective(700px) rotateX(55deg) scale(1.8) translateY(70px);
+    }
+}
+
+
+/* =========================================================
+   VISUAL CONTENT
+   ========================================================= */
+
+.proj-visual-content {
+    position: absolute;
+
+    inset: 0;
+
+    padding: clamp(24px, 3vw, 48px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    z-index: 2;
+}
+
+
+/* Small category */
+
+.proj-visual-label {
+    display: block;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   CENTRAL METRIC
+   ========================================================= */
+
+.proj-visual-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+.proj-visual-center strong {
+    font-family: 'Instrument Serif', Georgia, serif;
+
+    font-size: clamp(64px, 10vw, 150px);
+
+    line-height: 0.85;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    letter-spacing: -0.04em;
+
+    opacity: 0.92;
+
+    animation: metricFloat 5s ease-in-out infinite;
+}
+
+.proj-visual-center span {
+    margin-top: 14px;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.24em;
+
+    text-transform: uppercase;
+
+    opacity: 0.58;
+}
+
+@keyframes metricFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================================================
+   SYSTEM / DATA INDICATORS
+   ========================================================= */
+
+.proj-visual-system {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 7px;
+
+    height: 52px;
+
+    width: 180px;
+}
+
+.proj-visual-system span {
+    display: block;
+
+    width: 18px;
+
+    height: 12px;
+
+    background: rgba(239, 233, 216, 0.7);
+
+    transform-origin: bottom;
+
+    animation: dataBars 2.8s ease-in-out infinite;
+}
+
+.proj-visual-system span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.proj-visual-system span:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+.proj-visual-system span:nth-child(3) {
+    animation-delay: 0.36s;
+}
+
+.proj-visual-system span:nth-child(4) {
+    animation-delay: 0.54s;
+}
+
+.proj-visual-system span:nth-child(5) {
+    animation-delay: 0.72s;
+}
+
+@keyframes dataBars {
+
+    0%,
+    100% {
+        transform: scaleY(0.45);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: scaleY(1);
+        opacity: 0.9;
+    }
+}
+
+
+/* =========================================================
+   PROJECT NAME INSIDE VISUAL
+   ========================================================= */
+
+.proj-visual-name {
+    position: absolute;
+
+    right: clamp(24px, 3vw, 48px);
+    bottom: clamp(22px, 3vw, 42px);
+
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    opacity: 0.45;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   PROJECT-SPECIFIC VISUAL TREATMENT
+   ========================================================= */
+
+
+/* AIM */
+
+.proj-visual--aim {
+    background:
+        radial-gradient(circle at 50% 45%,
+            rgba(196, 103, 56, 0.18),
+            transparent 42%),
+        #100b09;
+}
+
+.proj-visual--aim .proj-visual-grid {
+    background-size: 55px 55px;
+}
+
+
+/* OmniRAG */
+
+.proj-visual--omnirag {
+    background:
+        radial-gradient(circle at 50% 50%,
+            rgba(160, 160, 160, 0.1),
+            transparent 50%),
+        #0b0d0d;
+}
+
+.proj-visual--omnirag .proj-visual-grid {
+    background-size: 42px 42px;
+}
+
+
+/* NexoraAgri */
+
+.proj-visual--nexoraagri {
+    background:
+        radial-gradient(circle at 50% 50%,
+            rgba(105, 130, 75, 0.18),
+            transparent 48%),
+        #0c100b;
+}
+
+
+/* CodeSync */
+
+.proj-visual--codesync {
+    background:
+        radial-gradient(circle at 50% 50%,
+            rgba(80, 105, 135, 0.16),
+            transparent 48%),
+        #090c10;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.proj-slide:hover .proj-visual {
+    filter: brightness(1.06);
+}
+
+.proj-slide:hover .proj-visual-grid {
+    opacity: 0.72;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+   ========================================================= */
+
+.proj-slide::before,
+.proj-slide::after {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.5s ease;
+}
+
+.proj-slide::after {
+    background: rgba(0, 0, 0, 0.32);
+
+    z-index: 5;
+}
+
+.proj-slide::before {
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.88),
+            rgba(0, 0, 0, 0.1) 70%);
+
+    z-index: 5;
+}
+
+.proj-slide:hover::before,
+.proj-slide:hover::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   PROJECT INFORMATION
+   ========================================================= */
+
+.proj-info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    padding:
+        clamp(22px, 3vw, 42px) clamp(22px, 3vw, 42px);
+
+    color: #efe9d8;
+
+    transform: translateY(110%);
+
+    transition:
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+    pointer-events: none;
+}
+
+.proj-links a {
+    pointer-events: auto;
+}
+
+.proj-slide:hover .proj-info {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   INFO LINE
+   ========================================================= */
+
+.proj-line {
+    display: block;
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 5px;
+
+    background: rgba(239, 233, 216, 0.75);
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.proj-category {
+    display: block;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   PROJECT NAME
+   ========================================================= */
+
+.proj-name {
+    margin: 0;
+
+    font-family: 'Instrument Serif', Georgia, serif;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    font-size: clamp(30px, 4vw, 58px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.025em;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.proj-desc {
+    margin: 2px 0 0;
+
+    max-width: 58ch;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: clamp(12px, 0.9vw, 14px);
+
+    line-height: 1.5;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+   ========================================================= */
+
+.proj-tech {
+    margin: 3px 0 0;
+
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.proj-links {
+    display: flex;
+
+    gap: 22px;
+
+    margin-top: 7px;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.proj-links a {
+    font-family: 'Archivo', system-ui, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color: #efe9d8;
+
+    text-decoration: none;
+
+    padding-bottom: 3px;
+
+    border-bottom:
+        1px solid rgba(239, 233, 216, 0.35);
+
+    transition:
+        border-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.proj-links a:hover {
+    border-color: #efe9d8;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   HOVER REVEAL STAGGER
+   ========================================================= */
+
+.proj-slide:hover .proj-line {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 0.03s;
+}
+
+.proj-slide:hover .proj-category {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 0.08s;
+}
+
+.proj-slide:hover .proj-name {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 0.14s;
+}
+
+.proj-slide:hover .proj-desc {
+    opacity: 0.88;
+
+    transform: translateY(0);
+
+    transition-delay: 0.21s;
+}
+
+.proj-slide:hover .proj-tech {
+    opacity: 0.62;
+
+    transform: translateY(0);
+
+    transition-delay: 0.27s;
+}
+
+.proj-slide:hover .proj-links {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay: 0.33s;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.fw-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 200;
+
+    cursor: zoom-out;
+
+    animation: fwModalIn 0.25s ease;
+}
+
+@keyframes fwModalIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fw-modal video {
+    width: min(92vw, 1600px);
+
+    max-height: 88vh;
+
+    object-fit: contain;
+
+    background: #000;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6);
+
+    cursor: default;
+}
+
+.fw-modal-close {
+    position: absolute;
+
+    top: 24px;
+    right: 28px;
+
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #efe9d8;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.fw-modal-close:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .proj-visual-grid,
+    .proj-visual-center strong,
+    .proj-visual-system span {
+        animation: none;
+    }
+
+    .proj-slide,
+    .proj-info,
+    .proj-line,
+    .proj-category,
+    .proj-name,
+    .proj-desc,
+    .proj-tech,
+    .proj-links {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .fw-section {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+
+    .proj-slide--big {
+        height: clamp(380px, 62vh, 680px);
+    }
+
+    .proj-slide--half {
+        height: clamp(320px, 52vh, 560px);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+    .fw-section {
+        padding:
+            14vh 5vw 12vh;
+    }
+
+    .fw-heading {
+        font-size: clamp(48px, 15vw, 78px);
+    }
+
+    .fw-projects {
+        gap: 24px;
+
+        margin-top: 56px;
+    }
+
+    .proj-row {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+    }
+
+    .proj-slide--big {
+        height: 70vh;
+
+        min-height: 420px;
+    }
+
+    .proj-slide--half {
+        height: 58vh;
+
+        min-height: 360px;
+    }
+
+    /*
+   * On touch screens there is no hover.
+   * Keep project information visible.
+   */
+    .proj-info {
+        transform: translateY(0);
+    }
+
+    .proj-slide::before,
+    .proj-slide::after {
+        opacity: 1;
+    }
+
+    .proj-line,
+    .proj-category,
+    .proj-name,
+    .proj-desc,
+    .proj-tech,
+    .proj-links {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+    .proj-visual-center strong {
+        font-size: clamp(58px, 18vw, 100px);
+    }
+}
