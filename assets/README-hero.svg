@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050505"/><stop offset=".55" stop-color="#11100b"/><stop offset="1" stop-color="#050505"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff08a"/><stop offset=".35" stop-color="#ffc400"/><stop offset="1" stop-color="#ff7a00"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-opacity=".65"/></filter>
+  <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse" patternTransform="perspective(500)"><path d="M38 0H0V38" fill="none" stroke="#ffc400" stroke-opacity=".09"/></pattern>
+</defs>
+<rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+<rect x="18" y="18" width="1164" height="484" rx="22" fill="url(#grid)" stroke="#ffc400" stroke-opacity=".35"/>
+<path d="M0 410 L300 300 L610 355 L1200 220 L1200 520 L0 520Z" fill="#ffc400" opacity=".035"/>
+<g filter="url(#glow)" opacity=".9"><path d="M70 90H250" stroke="#ffc400" stroke-width="3"/><path d="M950 90H1130" stroke="#ffc400" stroke-width="3"/></g>
+<g transform="translate(600 92)" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">
+  <text y="0" fill="#ffc400" font-size="18" font-weight="700" letter-spacing="7">PLAYER ONE • ONLINE</text>
+  <text y="88" fill="url(#gold)" font-size="64" font-weight="900" letter-spacing="2" filter="url(#shadow)">DEEKSHITA</text>
+  <text y="132" fill="#fff" font-size="24" font-weight="700" letter-spacing="9">RAJESH NAIK</text>
+  <text y="190" fill="#aaa" font-size="17" letter-spacing="4">I TOLD YOU. YOU'RE GONNA LOVE IT.</text>
+</g>
+<g transform="translate(145 270)" filter="url(#shadow)">
+ <path d="M0 52 L42 0 H365 L407 52 L365 104 H42 Z" fill="#0b0b0b" stroke="#ffc400" stroke-width="2"/>
+ <path d="M25 52 L58 17 H349 L382 52 L349 87 H58 Z" fill="none" stroke="#ffc400" stroke-opacity=".28"/>
+ <text x="204" y="60" text-anchor="middle" fill="#fff" font-family="Arial" font-size="18" font-weight="700" letter-spacing="5">ENTER THE EXPERIENCE</text>
+</g>
+<g transform="translate(680 270)">
+ <path d="M0 52 L42 0 H365 L407 52 L365 104 H42 Z" fill="#0b0b0b" stroke="#ffc400" stroke-width="2"/>
+ <text x="204" y="60" text-anchor="middle" fill="#ffc400" font-family="Arial" font-size="18" font-weight="900" letter-spacing="5">LEVEL UP →</text>
+</g>
+<g transform="translate(600 450)" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">
+ <text fill="#666" font-size="12" letter-spacing="6">DEEKSHITA // 2026 // PLAY MODE</text>
+</g>
+</svg>
