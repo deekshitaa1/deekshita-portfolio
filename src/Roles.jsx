@@ -4,10 +4,11 @@ import './Roles.css';
 
 const roles = [
   'Data Analyst',
+  'Data Engineer',
   'Data Scientist',
   'Machine Learning Engineer',
   'Generative AI Engineer',
-  'Data Engineer',
+  
 ];
 
 const Roles = forwardRef(function Roles(_props, ref) {
