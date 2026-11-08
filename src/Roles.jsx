@@ -3,12 +3,13 @@ import cursorVid from './assets/creative.mp4';
 import './Roles.css';
 
 const roles = [
-  'Data Analyst',
-  'Data Engineer',
-  'Data Scientist',
-  'Machine Learning Engineer',
-  'Generative AI Engineer',
   
+    'Software Engineer',
+    'Software Developer',
+    'Software Development Engineer (SDE)',
+    'Backend Engineer',
+    'Full Stack Developer',
+
 ];
 
 const Roles = forwardRef(function Roles(_props, ref) {
