@@ -3,12 +3,7 @@ import VariableFontText from './VariableFontText';
 import './Skills.css';
 
 const SKILLS = [
-  {
-    number: '01',
-    title: 'DATA ANALYTICS',
-    items:
-      'Python · SQL · Pandas · NumPy · EDA · Data Cleaning · Data Validation · Statistics · Feature Engineering · Power BI · Data Visualization',
-  },
+ 
   {
     number: '02',
     title: 'MACHINE LEARNING',
